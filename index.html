@@ -140,8 +140,12 @@
         }
 
         .gallery-item p {
-            margin-top: 5px;
-            font-size: 14px;
+            margin-top: -6px;
+            font-size: 15px;
+        }
+
+        .gallery-items p {
+            font-size: 15px;
         }
 
         .arrow {
@@ -460,11 +464,8 @@
                 renderings and distractor-free novel view synthesis results. More results are shown below:
             </p>
             <h3 class="text" style="margin-top: -40px;"><br>Phototourism</h3>
-
-
                     <div>
                         <div class="gallery-container">
-                            <span class="arrow arrow-left" onclick="scrollGallery('gallery2', -300)">&#10094;</span>
                             <div id="gallery2" class="gallery">
                                 <div class="gallery-items" style="margin: 0 20px 0 0;">
                                     <video src="./static/video/PhotoTourism/braemenberug.mp4" controls autoplay muted
@@ -483,19 +484,11 @@
                                     <p>Trevi Fountain</p>
                                 </div>
                             </div>
-                            <span class="arrow arrow-right" onclick="scrollGallery('gallery2', 300)">&#10095;</span>
                         </div>
-
-                        
                         <br>
-
-
                 
             <h3 class="text" style="margin-top: -60px;"><br>NeRF On-the-go</h3>
-            <div class="container-fluid">
-                <div class="row py-3 align-item-center">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-10 text-center h-100">
+                    <div>
                         <div class="gallery-container">
                             <span class="arrow arrow-left" onclick="scrollGallery('gallery1', -300)">&#10094;</span>
                             <div id="gallery1" class="gallery">
@@ -538,9 +531,7 @@
                             <span class="arrow arrow-right" onclick="scrollGallery('gallery1', 300)">&#10095;</span>
                         </div>
                         <div class="pagination-dots"></div>
-                    </div>
-                </div>
-            </div>
+
         </div>
         <script>
             let index = 0;
