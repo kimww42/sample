@@ -343,6 +343,13 @@ d-article {
   position: relative;
 }
 
+d-appendix {
+  contain: none;
+  position: relative;
+  padding-left: 10em;
+}
+
+
 d-article d-contents {
   max-width: 100%;
   /* Or the maximum width you want it to have */
@@ -1293,6 +1300,10 @@ h3.text {
   display: none;
   border-radius: 1.5em;
 }
+::-webkit-scrollbar {
+  display: none;
+}
+
 
 .figure {
   width: 150%;
@@ -1835,3 +1846,5 @@ div.takeaway-tags img {
       40vmax 60vmax;
   }
 } */
+
+

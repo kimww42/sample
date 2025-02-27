@@ -256,6 +256,100 @@
         .custom-thumbnail.active {
             border: 2px solid red;
         }
+
+        .img_siwon_slider {
+        position: relative;
+        overflow: hidden;
+        width: 150%;
+        margin: 20px auto; /* 중앙 정렬 */
+        margin-left: -140px;
+        }
+
+        .img_siwon_slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        }
+
+        .img_siwon_slide {
+        width: 100%;
+        flex-shrink: 0;
+        text-align: center; /* 캡션 중앙 정렬 */
+        }
+
+        .img_siwon_slide img {
+        width: 100%;
+        display: block;
+        }
+
+        .caption {
+        margin-top: 10px;
+        font-size: 16px;
+        color: #333;
+        }
+
+        .img_siwon_prev, .img_siwon_next {
+        position: absolute;
+        top: 45%;
+        transform: translateY(-50%);
+        background: rgba(220, 220, 220, 0.8);
+        color: #3a3a3a;
+        border: none;
+        padding: 8px;
+        cursor: pointer;
+        font-size: 20px;
+        }
+
+        .img_siwon_prev {
+        left: 10px;
+        }
+
+        .img_siwon_next {
+        right: 10px;
+        }
+
+        .tab_siwon_slider {
+        position: relative;
+        overflow: hidden;
+        width: 150%;
+        margin: 20px auto; /* 중앙 정렬 */
+        margin-left: -140px;
+        }
+
+        .tab_siwon_slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        }
+
+        .tab_siwon_slide {
+        width: 100%;
+        flex-shrink: 0;
+        text-align: center; /* 캡션 중앙 정렬 */
+        }
+
+        .tab_siwon_slide img {
+        width: 100%;
+        display: block;
+        }
+
+        .tab_siwon_prev, .tab_siwon_next {
+        position: absolute;
+        top: 45%;
+        transform: translateY(-50%);
+        background: rgba(220, 220, 220, 0.8);
+        color: #3a3a3a;
+        border: none;
+        padding: 8px;
+        cursor: pointer;
+        font-size: 20px;
+        }
+
+        .tab_siwon_prev {
+        left: 10px;
+        }
+
+        .tab_siwon_next {
+        right: 10px;
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -314,25 +408,29 @@
                         target="_blank">Wongi Park<sup>1</sup></a>,
                     <a href="https://baichuanzhou.github.io/" class="author-link AILAB-author" target="_blank">
                         Myeongseok Nam<sup>1</sup></a>,
+                    <a href="https://baichuanzhou.github.io/" class="author-link AILAB-author" target="_blank">
+                        Siwon Kim<sup>1</sup></a>,
+                    <a href="https://baichuanzhou.github.io/" class="author-link AILAB-author" target="_blank">
+                        Sangwoo Jo<sup>3</sup></a>,
                     <a href="https://liweijia.github.io/" class="author-link SYSU-author" target="_blank"> Soomok Lee
                         <sup>2†</sup></a>
                 </p>
                 <p style="color: #FFF7D4">
                     <em><strong style="color: #ffe099">Affiliations:</strong></em>
                     <span id="Ajou" class="author-link SYSU-author AILAB-author" data-affiliation="Ajou">Department of <sup>1</sup>Software 
-                        and <sup>2</sup>Artificial Intelligence, Ajou university</span>
+                        and <sup>2</sup>Artificial Intelligence, Ajou university and <sup>3</sup>Minds and Company</span>
                 </p>
                 <p style="color: #ffffff">
                     † Corresponding Authors
                 </p>
                 <div class="button-container">
-                    <a href="https://arxiv.org/abs/2410.09732" class="button paper-link" target="_blank">
+                    <a href="https://arxiv.org/abs/" class="button paper-link" target="_blank">
                         <span class="icon is-small">
                             <i class="ai ai-arxiv"></i>
                         </span>
                         ArXiv
                     </a>
-                    <a href="https://github.com/opendatalab/LOKI" class="button" target="_blank">
+                    <a href="https://github.com/" class="button" target="_blank">
                         <span class="icon is-small">
                             <i class="fab fa-github"></i>
                         </span>
@@ -348,7 +446,6 @@
         </div>
     </div>
     <d-article>
-        <!-- 导航栏 -->
         <div class="nav-bar" id="nav-bar">
             <!-- TOP -->
             <a class="nav-link" href="#top" style="opacity: 0.7">
@@ -359,11 +456,19 @@
             <hr style="display: block; margin: auto;">
             <!-- finding -->
             <div id="nav-bar-finding">
+                <a class="nav-link" href="#fingding">
+                    <img class="loki-tag" src="static/img/tags/abstract.png">
+                </a>
+
                 <a class="nav-link" href="#fingding"><img src="static/img/icons/finding.png" title="finding"></a>
             </div>
             <hr style="display: block; margin: auto;">
             <!-- video -->
             <div class="video-color">
+                <a class="nav-link" href="#video">
+                    <img class="loki-tag" src="static/img/tags/video.png">
+                </a>
+
                 <a class="nav-link" href="#video">
                     <img class="loki-tag" src="static/img/icons/video.png">
                 </a>
@@ -372,39 +477,27 @@
             <!-- image -->
             <div class="image-color">
                 <a class="nav-link" href="#image">
-                    <img class="loki-tag" src="static/img/tags/image.jpg">
+                    <img class="loki-tag" src="static/img/tags/image.png">
                 </a>
-                <a class="nav-link" href="#image-case"><img src="static/img/icons/image.png" title="image data">
-                </a>
-            </div>
-            <hr style="display: block; margin: auto;">
-            <!-- 3D -->
-            <div class="td-color">
-                <a class="nav-link" href="#td">
-                    <img class="loki-tag" src="static/img/tags/3D.jpg">
-                </a>
-                <a class="nav-link" href="#tD-case"><img src="static/img/icons/3d.png" title="3D data">
-                </a>
-            </div>
-            <hr style="display: block; margin: auto;">
-            <!-- text -->
-            <div class="text-color">
-                <a class="nav-link" href="#text-type">
-                    <img class="loki-tag" src="static/img/tags/text.jpg">
-                </a>
-                <a class="nav-link" href="#text-case">
-                    <img src="static/img/icons/text.png" title="text data">
+                <a class="nav-link" href="#image"><img src="static/img/icons/image.png">
                 </a>
             </div>
             <hr style="display: block; margin: auto;">
             <!-- evaluation -->
             <div id="nav-bar-evaluation">
+                <a class="nav-link" href="#evaluation">
+                    <img class="loki-tag" src="static/img/tags/evaluation.png">
+                </a>
+
                 <a class="nav-link" href="#evaluation"><img src="static/img/icons/evaluation.png"
                         title="evaluation"></a>
             </div>
             <hr style="display: block; margin: auto;">
             <!-- conclusion -->
             <div id="nav-bar-conclusion">
+                <a class="nav-link" href="#conclusion">
+                    <img class="loki-tag" src="static/img/tags/conclusion.png">
+                </a>
                 <a class="nav-link" href="#conclusion"><img src="static/img/icons/conclusion.png"
                         title="LOKI conclusion"></a>
             </div>
@@ -464,7 +557,10 @@
                 renderings and distractor-free novel view synthesis results. More results are shown below:
             </p>
             <h3 class="text" style="margin-top: -40px;"><br>Phototourism</h3>
-                    <div>
+            <div class="container-fluid">
+                <div class="row py-3 align-item-center">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10 text-center h-100">
                         <div class="gallery-container">
                             <div id="gallery2" class="gallery">
                                 <div class="gallery-items" style="margin: 0 20px 0 0;">
@@ -485,10 +581,16 @@
                                 </div>
                             </div>
                         </div>
-                        <br>
+                    </div>
+                    <br>
+                </div>
+            </div>
                 
             <h3 class="text" style="margin-top: -60px;"><br>NeRF On-the-go</h3>
-                    <div>
+            <div class="container-fluid">
+                <div class="row py-3 align-item-center">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10 text-center h-100">
                         <div class="gallery-container">
                             <span class="arrow arrow-left" onclick="scrollGallery('gallery1', -300)">&#10094;</span>
                             <div id="gallery1" class="gallery">
@@ -530,7 +632,10 @@
                             </div>
                             <span class="arrow arrow-right" onclick="scrollGallery('gallery1', 300)">&#10095;</span>
                         </div>
-                        <div class="pagination-dots"></div>
+                        <br>
+                    </div>
+                </div>
+            </div>
 
         </div>
         <script>
@@ -542,6 +647,7 @@
                 slides.style.transform = `translateX(${-index * 100}%)`;
             }
         </script>
+
         <div id="image">
             <h2 class="text"><img src="static/img/icons/image.png" width="50px"> Image</h2>
             <div class="l-screen grey-overlay"></div>
@@ -549,635 +655,142 @@
                 We provide qualitative results on the Photo Tourism and NeRF On-the-Go datasets. Our method addresses
                 occluders in the scene using superpixel-aware masking and a multi-stage training strategy.
             </p>
-            <div class="custom-image-comparison" id="custom-comparison">
-                <img id="custom-base-image" class="custom-base-image"
-                    src="static/img/qualitative/Outdoor1/Outdoor_3dgs.png">
-                <div class="custom-overlay" id="custom-overlay">
-                    <img id="custom-overlay-image" class="custom-overlay-image"
-                        src="static/img/qualitative/Outdoor1/Outdoor_gt.png">
-                </div>
-                <div id="custom-slider" class="custom-slider"></div>
-            </div>
-
-            <div class="custom-thumbnail-container">
-                <img class="custom-thumbnail active" src="static/img/qualitative/Outdoor1/Outdoor_3dgs.png"
-                    onclick="changeImages('static/img/qualitative/Outdoor1/Outdoor_3dgs.png', 'static/img/qualitative/Outdoor1/Outdoor_2dgs.png')">
-
-                <img class="custom-thumbnail" src="static/img/qualitative/Outdoor1/Outdoor_2dgs.png"
-                    onclick="changeImages('static/img/qualitative/Outdoor1/Outdoor_2dgs.png', 'static/img/qualitative/Outdoor1/Outdoor_1dgs.png')">
-
-                <img class="custom-thumbnail" src="static/img/qualitative/Outdoor1/Outdoor_1dgs.png"
-                    onclick="changeImages('static/img/qualitative/Outdoor1/Outdoor_1dgs.png', 'static/img/qualitative/Outdoor1/Outdoor_3dgs.png')">
-            </div>
+            <img src="./fig4.png" alt="" style="margin-left: -140px; width: 150%;">
+            <img src="./fig5.png" alt="" style="margin-left: -140px; width: 150%;">
+            <br><br><br>
         </div>
 
-        </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slidesContainer = document.querySelector('.img_siwon_slides');
+            const slides = document.querySelectorAll('.img_siwon_slide');
+            const prevBtn = document.querySelector('.img_siwon_prev');
+            const nextBtn = document.querySelector('.img_siwon_next');
 
-        <div id="td">
-            <h2 class="text"><img class="loki-tag" src="static/img/tags/3D.jpg"><br>3D</h2>
-            <div class="l-screen grey-overlay"></div>
-            <p class="text">
-                We conducted a comprehensive analysis of <i>OmniObject3D</i>, selecting scanned instances as ground
-                truth within the same domain.
-                By constructing prompt texts, we synthesized <strong>three</strong> <img style="height: 25px;"
-                    src="static/img/icons/NeRF.png"><i>NeRF</i> models and <strong>three</strong> <img
-                    style="height: 25px;" src="static/img/icons/GS.png"><i>3DGS</i> models, and
-                supplemented them with results from the advanced commercial model <i>Clay</i> and some Nerf-based
-                results from <i>GPTEval3D</i>.
-                We collected a total of over <strong>1,200</strong> 3D models from <strong>ten</strong> different
-                synthesis methods, including both synthesized and real scanned data.
-            </p>
-            <h3 class="text" id="tD-case" style="margin-top: 40px;"><img style="width: 50px"
-                    src="static/img/icons/3d.png"> 3D
-                Case</h3>
-            <div id="slider-img-3D" class="slider-img-container">
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/3D/CLAY_21.png" style="width:100%">
-                    <figcaption style="text-align: center;">
-                        <strong>method: </strong>CLAY <br>
-                        <strong>prompt: </strong>A plush octopus whose arms are gently waving pencils
-                    </figcaption>
-                </div>
+            if (!prevBtn || !nextBtn) {
+                console.error("버튼 요소를 찾을 수 없습니다.");
+                return;
+            }
 
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/3D/GradeADreamer_0.png" style="width:100%">
-                    <figcaption style="text-align: center;">
-                        <strong>method: </strong>GradeADreamer <br>
-                        <strong>prompt: </strong>A torn hat
-                    </figcaption>
-                </div>
+            let currentIndex = 0;
+            const totalSlides = slides.length;
 
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/3D/dreamgaussian_13.png" style="width:100%">
-                    <figcaption style="text-align: center;">
-                        <strong>method: </strong>DreamGaussian <br>
-                        <strong>prompt: </strong>A chair made from polished oak
-                    </figcaption>
-                </div>
+            function showSlide(index) {
+                if (index < 0) {
+                currentIndex = totalSlides - 1;
+                } else if (index >= totalSlides) {
+                currentIndex = 0;
+                } else {
+                currentIndex = index;
+                }
+                slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
 
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/3D/gaussiandreamer.png" style="width:100%">
-                    <figcaption style="text-align: center;">
-                        <strong>method: </strong>GaussianDreamer <br>
-                        <strong>prompt: </strong>A brick house
-                    </figcaption>
-                </div>
+            prevBtn.addEventListener('click', () => {
+                console.log("Prev 버튼 클릭");
+                showSlide(currentIndex - 1);
+            });
 
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/3D/dreamfusion.png" style="width:100%">
-                    <figcaption style="text-align: center;">
-                        <strong>method: </strong>DreamFusion <br>
-                        <strong>prompt: </strong>A pen sitting atop a pile of manuscripts
-                    </figcaption>
-                </div>
+            nextBtn.addEventListener('click', () => {
+                console.log("Next 버튼 클릭");
+                showSlide(currentIndex + 1);
+            });
+        })
+    </script>
 
-                <a class="prev" onclick="plusSlides('slider-img-3D', -1)">❮</a>
-                <a class="next" onclick="plusSlides('slider-img-3D', 1)">❯</a>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabslidesContainer = document.querySelector('.tab_siwon_slides');
+            const tabslides = document.querySelectorAll('.tab_siwon_slide');
+            const tabprevBtn = document.querySelector('.tab_siwon_prev');
+            const tabnextBtn = document.querySelector('.tab_siwon_next');
 
-                <figcaption id="caption" style="margin-bottom: 10px; text-align: center"></figcaption>
+            if (!tabprevBtn || !tabnextBtn) {
+                console.error("버튼 요소를 찾을 수 없습니다.");
+                return;
+            }
 
-                <div class="row">
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/3D/CLAY_21.png" style="width:100%"
-                            onclick="currentSlide('slider-img-3D', 1)" alt="">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/3D/GradeADreamer_0.png" style="width:100%"
-                            onclick="currentSlide('slider-img-3D', 2)" alt="">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/3D/dreamgaussian_13.png" style="width:100%"
-                            onclick="currentSlide('slider-img-3D', 3)" alt="">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/3D/gaussiandreamer.png" style="width:100%"
-                            onclick="currentSlide('slider-img-3D', 4)" alt="">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/3D/dreamfusion.png" style="width:100%"
-                            onclick="currentSlide('slider-img-3D', 5)" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- 3D labelu show -->
-            <h3 class="text" id="tD-labelu" style="margin-top: 40px;"><img style="width: 50px"
-                    src="static/img/icons/LabelU.png"> 3D Annotation</h3>
-            <p class="text" style="margin-top: 0;">
-                Additionally, we performed <img style="height: 25px;" src="static/img/icons/RGB.png"> <strong
-                    style="color: #4AD66D;">Texture Anomaly Description Annotations</strong> corresponding to the
-                <strong><span style="color: red;">R</span><span style="color: green;">G</span><span
-                        style="color: blue;">B</span></strong> four views of the synthesized 3D data,
-                as well as <img style="height: 25px;" src="static/img/icons/normal.png"> <strong
-                    style="color: #4AD66D;">Normal
-                    Anomaly Description Annotations</strong>.
-                Notably, besides the multi-view format, the 3D data also supports <i>point clouds</i> and <i>panoramic
-                    videos</i>.
-                (Use <span style="color: #1B67FF; font-weight: bold;"><a class="LabelU"
-                        href="https://github.com/opendatalab/labelU">LabelU</a></span> for annotation)
-            </p>
-            <video class="auto-video" muted autoplay preload="auto" loop="loop" playsinline>
-                <source src="static/video/3d_labelu_animation.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <!-- 第五部分： 文本 -->
-        <div id="text-type">
-            <h2 class="text"><img class="loki-tag" src="static/img/tags/text.jpg"> <br> Text</h2>
-            <div class="l-screen grey-overlay"></div>
-            <p class="text">
-                Based on summarization and regeneration methods, we generated counterfeit texts similar to the original
-                texts using mainstream models such as
-                <img style="height: 25px;" src="static/img/icons/GPT.png"> GPT-4o,
-                <img style="height: 25px;" src="static/img/icons/Qwen.png"> Qwen-VL-Max,
-                <img style="height: 25px;" src="static/img/icons/llama.png"> Llama 3.1-405B. We collected
-                <strong>eight</strong> categories of text data, pairing each sample with a real text
-                and a model-generated similar text, totaling <strong>4,320</strong> text entries. Our text data were
-                categorized by length and language, including <i>short texts</i> (50-100 characters), <i>medium
-                    texts</i> (100-200 characters), and <i>long texts</i> (over 300 characters), with a 1:1 ratio of
-                <strong>Chinese</strong> to <strong>English</strong> data.
-            </p>
-        </div>
-        <div id="text-image" class="text-type">
-            <h3 class="text" id="text-case" style="margin-top: 40px;"><img style="width: 50px"
-                    src="static/img/icons/text.png">
-                Text Case</h3>
-            <div class="l-screen grey-overlay"></div>
-            <!-- text button -->
-            <div class="interactive-image">
-                <div id="img-text-container">
-                    <p x="165" y="-12.5" text-anchor="left"
-                        style="font-weight: 700; font-size: 17px; font-family: sans-serif; text-align: center;">Click
-                        here to view different types of text:</p>
-                    <div class="button-bar">
-                        <!-- Buttons to interact with the image and text -->
-                        <button class="bookmarkBtn" onclick="changeText('ancient-literature')">
-                            <span class="IconContainer">
-                                <img style="height: 35px;" src="static/img/icons/ancient-literature.png">
-                            </span>
-                            <p class="text">Ancient Literature</p>
-                        </button>
-                        <button class="bookmarkBtn" onclick="changeText('speech')">
-                            <span class="IconContainer">
-                                <img style="height: 35px;" src="static/img/icons/speech-text.png">
-                            </span>
-                            <p class="text">Speech</p>
-                        </button>
-                        <button class="bookmarkBtn" onclick="changeText('modern-literature')">
-                            <span class="IconContainer">
-                                <img style="height: 35px;" src="static/img/icons/modern-literature.png">
-                            </span>
-                            <p class="text">Modern Literature</p>
-                        </button>
-                        <button class="bookmarkBtn" onclick="changeText('wiki')">
-                            <span class="IconContainer">
-                                <img style="height: 35px;" src="static/img/icons/wiki.png">
-                            </span>
-                            <p class="text">Wiki</p>
-                        </button>
-                        <br>
-                        <button class="bookmarkBtn" onclick="changeText('philosophy')">
-                            <span class="IconContainer">
-                                <img style="height: 35px;" src="static/img/icons/philosophy.png">
-                            </span>
-                            <p class="text">Philosophy</p>
-                        </button>
-                        <button class="bookmarkBtn" onclick="changeText('paper')">
-                            <span class="IconContainer">
-                                <img style="height: 35px;" src="static/img/icons/paper.png">
-                            </span>
-                            <p class="text">Paper</p>
-                        </button>
-                        <button class="bookmarkBtn" onclick="changeText('news')">
-                            <span class="IconContainer">
-                                <img style="height: 35px;" src="static/img/icons/news.png">
-                            </span>
-                            <p class="text">News</p>
-                        </button>
-                        <button class="bookmarkBtn" onclick="changeText('essay')">
-                            <span class="IconContainer">
-                                <img style="height: 35px;" src="static/img/icons/essay.png">
-                            </span>
-                            <p class="text">Essay</p>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- ancient literature-->
-            <div id="slider-text-ancient-literature" class="slider-img-container">
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/text/AncientLilterature_ch.png" style="width:100%;">
-                </div>
+            let tabcurrentIndex = 0;
+            const tabtotalSlides = tabslides.length;
 
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/text/AncientLilterature_en.png" style="width:100%">
-                </div>
+            function tabshowSlide(index) {
+                if (index < 0) {
+                    tabcurrentIndex = tabtotalSlides - 1;
+                } else if (index >= tabtotalSlides) {
+                    tabcurrentIndex = 0;
+                } else {
+                    tabcurrentIndex = index;
+                }
+                tabslidesContainer.style.transform = `translateX(-${tabcurrentIndex * 100}%)`;
+            }
 
+            tabprevBtn.addEventListener('click', () => {
+                console.log("Prev 버튼 클릭");
+                tabshowSlide(tabcurrentIndex - 1);
+            });
 
-                <a class="prev" onclick="plusSlides('slider-text-ancient-literature', -1)">❮</a>
-                <a class="next" onclick="plusSlides('slider-text-ancient-literature', 1)">❯</a>
-
-                <figcaption id="caption" style="margin-bottom: 10px; text-align: center"></figcaption>
-
-                <div class="row">
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/text/AncientLilterature_ch.png"
-                            style="width:100%" onclick="currentSlide('slider-text-ancient-literature', 1)" alt="">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/text/AncientLilterature_en.png"
-                            style="width:100%" onclick="currentSlide('slider-text-ancient-literature', 2)" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- speech -->
-            <div id="slider-text-speech" class="slider-img-container" style="display: none;">
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/text/Speech_ch.png" style="width:100%;">
-                </div>
-
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/text/Speech_en.png" style="width:100%">
-                </div>
-
-                <a class="prev" onclick="plusSlides('slider-text-speech', -1)">❮</a>
-                <a class="next" onclick="plusSlides('slider-text-speech', 1)">❯</a>
-
-                <figcaption id="caption" style="margin-bottom: 10px; text-align: center"></figcaption>
-
-                <div class="row">
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/text/Speech_ch.png" style="width:100%"
-                            onclick="currentSlide('slider-text-speech', 1)" alt="">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/text/Speech_en.png" style="width:100%"
-                            onclick="currentSlide('slider-text-speech', 2)" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- modern literature -->
-            <div id="slider-text-modern-literature" class="slider-img-container" style="display: none;">
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/text/ModernLilterature_ch.png" style="width:100%;">
-                </div>
-
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/text/ModernLilterature_en.png" style="width:100%">
-                </div>
-
-                <a class="prev" onclick="plusSlides('slider-text-modern-literature', -1)">❮</a>
-                <a class="next" onclick="plusSlides('slider-text-modern-literature', 1)">❯</a>
-
-                <figcaption id="caption" style="margin-bottom: 10px; text-align: center"></figcaption>
-
-                <div class="row">
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/text/ModernLilterature_en.png"
-                            style="width:100%" onclick="currentSlide('slider-text-modern-literature', 1)" alt="">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/text/ModernLilterature_en.png"
-                            style="width:100%" onclick="currentSlide('slider-text-modern-literature', 2)" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- Wiki -->
-            <div id="slider-text-wiki" class="slider-img-container" style="display: none;">
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/text/Wikipedia_ch.png" style="width:100%;">
-                </div>
-
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/text/Wikipedia_en.png" style="width:100%">
-                </div>
-
-                <a class="prev" onclick="plusSlides('slider-text-wiki', -1)">❮</a>
-                <a class="next" onclick="plusSlides('slider-text-wiki', 1)">❯</a>
-
-                <figcaption id="caption" style="margin-bottom: 10px; text-align: center"></figcaption>
-
-                <div class="row">
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/text/Wikipedia_ch.png" style="width:100%"
-                            onclick="currentSlide('slider-text-wiki', 1)" alt="">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/text/Wikipedia_en.png" style="width:100%"
-                            onclick="currentSlide('slider-text-wiki', 2)" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- Philosophy -->
-            <div id="slider-text-philosophy" class="slider-img-container" style="display: none;">
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/text/Philosophical_ch.png" style="width:100%;">
-                </div>
-
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/text/Philosophical_en.png" style="width:100%">
-                </div>
-
-                <a class="prev" onclick="plusSlides('slider-text-philosophy', -1)">❮</a>
-                <a class="next" onclick="plusSlides('slider-text-philosophy', 1)">❯</a>
-
-                <figcaption id="caption" style="margin-bottom: 10px; text-align: center"></figcaption>
-
-                <div class="row">
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/text/Philosophical_ch.png" style="width:100%"
-                            onclick="currentSlide('slider-text-philosophy', 1)" alt="">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/text/Philosophical_en.png" style="width:100%"
-                            onclick="currentSlide('slider-text-philosophy', 2)" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- Paper -->
-            <div id="slider-text-paper" class="slider-img-container" style="display: none;">
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/text/Paper_ch.png" style="width:100%;">
-                </div>
-
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/text/Paper_en.png" style="width:100%">
-                </div>
-
-                <a class="prev" onclick="plusSlides('slider-text-paper', -1)">❮</a>
-                <a class="next" onclick="plusSlides('slider-text-paper', 1)">❯</a>
-
-                <figcaption id="caption" style="margin-bottom: 10px; text-align: center"></figcaption>
-
-                <div class="row">
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/text/Paper_ch.png" style="width:100%"
-                            onclick="currentSlide('slider-text-paper', 1)" alt="">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/text/Paper_en.png" style="width:100%"
-                            onclick="currentSlide('slider-text-paper', 2)" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- News -->
-            <div id="slider-text-news" class="slider-img-container" style="display: none;">
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/text/News_ch.png" style="width:100%;">
-                </div>
-
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/text/News_en.png" style="width:100%">
-                </div>
-
-                <a class="prev" onclick="plusSlides('slider-text-news', -1)">❮</a>
-                <a class="next" onclick="plusSlides('slider-text-news', 1)">❯</a>
-
-                <figcaption id="caption" style="margin-bottom: 10px; text-align: center"></figcaption>
-
-                <div class="row">
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/text/News_ch.png" style="width:100%"
-                            onclick="currentSlide('slider-text-news', 1)" alt="">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/text/News_en.png" style="width:100%"
-                            onclick="currentSlide('slider-text-news', 2)" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- Essay -->
-            <div id="slider-text-essay" class="slider-img-container" style="display: none;">
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/text/Essay_ch.png" style="width:100%;">
-                </div>
-
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/datacase/text/Essay_en.png" style="width:100%">
-                </div>
-
-                <a class="prev" onclick="plusSlides('slider-text-essay', -1)">❮</a>
-                <a class="next" onclick="plusSlides('slider-text-essay', 1)">❯</a>
-
-                <figcaption id="caption" style="margin-bottom: 10px; text-align: center"></figcaption>
-
-                <div class="row">
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/text/Essay_ch.png" style="width:100%"
-                            onclick="currentSlide('slider-text-essay', 1)" alt="">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="static/img/datacase/text/Essay_en.png" style="width:100%"
-                            onclick="currentSlide('slider-text-essay', 2)" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- GPT judgement/selection -->
-        <div id="LLM-test">
-            <h2 class="text"><img src="static/img/icons/QA.png" width="50px"> Questions</h2>
-            <div class="l-screen grey-overlay"></div>
-            <p class="text">
-                In terms of problem setting, our questions are mainly divided into the following four types:
-            <ul style="margin-left: -15%; width: 130%; font-size: 1.3rem">
-                <li><img style="height: 35px;" src="static/img/icons/judgement.png"> <strong>Judgement</strong>: This
-                    task requires LMMs to determine whether the input
-                    data is synthetic or real.</li>
-                <li><img style="height: 35px;" src="static/img/icons/selection.png"> <strong>Multiple-Choice</strong>:
-                    This task requires LMMs to correctly select AI-generated or real data from
-                    the provided synthetic and real data.</li>
-                <li><img style="height: 35px;" src="static/img/icons/explanation.png"> <strong>Abnomal
-                        Explanation</strong>: Based on fine-grained anomaly annotation data from modalities such
-                    as video, images, and 3D, we effectively design prompts and utilize <img style="height: 25px;"
-                        src="static/img/icons/GPT.png"> GPT-4o for generating Abnormal Detail Selection.</li>
-                <li><img style="height: 35px;" src="static/img/icons/details-selection.png"> <strong>Abnormal Details
-                        Selection</strong>: Furthermore, we design open-ended abnormal explanation questions, requiring
-                    LMMs to independently identify anomalies and explain their reasons. </li>
-            </ul>
-            </p>
-            <div id="question-image">
-                <img src="static/img/question_short.png" alt="" style="z-index: 8000;" data-zoomable>
-                <figcaption style="text-align: center"></figcaption>
-            </div>
-            <p class="text">*Here we have set up four question banks, each of which contains <strong>Judgement</strong>
-                and <strong>Multiple-Choice</strong> questions, and users can experience some of the questions.</p>
-            <div class="interactive-image">
-                <div id="img-exam-container">
-                    <p x="165" y="-12.5" text-anchor="left"
-                        style="font-weight: 700; font-size: 17px; font-family: sans-serif; text-align: center;">Click
-                        here to change examination:</p>
-                    <div class="button-bar">
-                        <button id="num1" class="bookmarkBtn" onclick="setQuizType('bank0')">
-                            <span class="IconContainer">
-                                <img style="height: 45px;" src="static/img/icons/num1_kana.png">
-                            </span>
-                            <p class="text">Exam 1</p>
-                        </button>
-                        <button id="num2" class="bookmarkBtn" onclick="setQuizType('bank1')">
-                            <span class="IconContainer">
-                                <img style="height: 45px;" src="static/img/icons/num2_aili.png">
-                            </span>
-                            <p class="text">Exam 2</p>
-                        </button>
-                        <button id="num3" class="bookmarkBtn" onclick="setQuizType('bank2')">
-                            <span class="IconContainer">
-                                <img style="height: 45px;" src="static/img/icons/num3_makoto.png">
-                            </span>
-                            <p class="text">Exam 3</p>
-                        </button>
-                        <button id="num4" class="bookmarkBtn" onclick="setQuizType('bank3')">
-                            <span class="IconContainer">
-                                <img style="height: 45px;" src="static/img/icons/num4_shajin.png">
-                            </span>
-                            <p class="text">Exam 4</p>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- judgement card -->
-            <h3 class="text" id="judgement_title" style="margin-top: 40px;"><img style="width: 50px"
-                    src="static/img/icons/judgement.png"> Judgement</h3>
-            <div id="judgement_card" class="card">
-                <div class="card_case">
-                    <img data-zoomable id="judgement_image" src="static/img/LLM-exam/judgement/Crab_Real.jpg" alt="">
-                </div>
-                <div class="user_card">
-                    <div class="quesion">
-                        <img data-zoomable src="static/img/icons/user.png" width="50px"><strong> User</strong>
-                        <span class="Qtext" id="jud_Qtext">"You have been shown one image, possibly generated by AI.
-                            <strong>Please identify whether this image is generated by AI or not</strong>."
-                        </span>
-                        <div class="interactive-image">
-                            <div id="jud-container">
-                                <p id="jud-prompt" x="165" y="-12.5" text-anchor="left"
-                                    style="font-weight: 700; font-size: 17px; font-family: sans-serif;">Click here to
-                                    choose your answer:</p>
-                                <div id="slider-img-table" class="slider-img-container">
-                                    <div class="my-slides">
-                                        <img data-zoomable src="static/img/Models_testResult.jpg">
-                                        <figcaption id="caption" style="margin-bottom: 10px; text-align: center">Table.2
-                                            Multimodal
-                                            evaluation of LMMs</figcaption>
-                                    </div>
-                                    <div class="my-slides">
-                                        <img data-zoomable src="static/img/Models_testResult_Text&Audio.jpg">
-                                        <figcaption id="caption" style="margin-bottom: 10px; text-align: center">Table.3
-                                            Left: Text
-                                            evaluaion of LLMs ; <br> Right: Audio evaluation of Audio
-                                            LMMs</figcaption>
-                                    </div>
-                                    <div class="my-slides">
-                                        <img data-zoomable src="static/img/Table3_diffModel-Abnormal.jpg">
-                                        <figcaption id="caption" style="margin-bottom: 10px; text-align: center">Table.4
-                                            Results of
-                                            different models on the LOKI for Abormal Details Selection and Abnormal
-                                            explanation questions</figcaption>
-                                    </div>
-                                    <div class="my-slides">
-                                        <img data-zoomable src="static/img/Table4&Table5.jpg">
-                                        <figcaption id="caption" style="margin-bottom: 10px; text-align: center">Table.5
-                                            Left: Result
-                                            decomposition across questions difficulty levels <br>
-                                            Right: LMMs’ performances under different prompting strategies for judgement
-                                            tasks
-                                        </figcaption>
-                                    </div>
-
-                                    <a class="prev" onclick="plusSlides('slider-img-table', -1)">❮</a>
-                                    <a class="next" onclick="plusSlides('slider-img-table', 1)">❯</a>
-
-                                    <figcaption id="caption" style="margin-bottom: 10px; text-align: center">
-                                    </figcaption>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- selection card -->
-            <h3 class="text" id="selection_title" style="margin-top: 40px;"><img style="width: 50px"
-                    src="static/img/icons/selection.png"> Selection</h3>
-            <div id="selection_card" class="card">
-                <div class="card_case">
-                    <img data-zoomable id="selection_image1" src="static/img/LLM-exam/selection/dog_fake.jpg" alt=""
-                        style="margin-bottom: 5%;">
-                    <img data-zoomable id="selection_image2" src="static/img/LLM-exam/selection/dog_real.jpg" alt="">
-                </div>
-                <div class="user_card">
-                    <div class="quesion">
-                        <img data-zoomable src="static/img/icons/user.png" width="50px"><strong> User</strong>
-                        <span class="Qtext" id="sel_Qtext">"You have been shown two different images. One of the images
-                            is generated by AI. <strong>Which of the above images is most likely not generated by AI
-                                ?</strong>"
-                        </span>
-                        <div class="interactive-image">
-                            <div id="sel-container">
-                                <p id="sel-prompt" x="165" y="-12.5" text-anchor="left"
-                                    style="font-weight: 700; font-size: 17px; font-family: sans-serif;">Click here to
-                                    choose your answer:</p>
-                                <div class="button-bar">
-                                    <!-- Buttons to interact with the image and text -->
-                                    <button onclick="checkAnswer('selection', 'A')"> <img
-                                            style="height: 40px; margin-top: -12%;"
-                                            src="static/img/icons/A.png"></button>
-                                    <button onclick="checkAnswer('selection', 'B')"> <img
-                                            style="height: 40px; margin-top: -12%;"
-                                            src="static/img/icons/B.png"></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
+            tabnextBtn.addEventListener('click', () => {
+                console.log("Next 버튼 클릭");
+                tabshowSlide(tabcurrentIndex + 1);
+            });
+        })
+    </script>
 
         <!-- Evaluation -->
         <div id="evaluation" style="position: relative; margin-top: 20px; margin-bottom: 40px;">
             <h2 class="text" style="margin-top:0px; margin-bottom:10px"><img src="static/img/icons/evaluation.png"
                     width="50px">
                 Evaluation</h2>
-            <div id="main-image">
-                <img src="static/img/lidar-map.png" alt="" style="z-index: 8000" data-zoomable>
-                <figcaption style="text-align: center">Figure. 2 The multimodal large model capability assessment
-                    analysis results</figcaption>
-            </div>
-            <br>
-            <div id="slider-img-table" class="slider-img-container">
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/Models_testResult.jpg">
-                    <figcaption id="caption" style="margin-bottom: 10px; text-align: center">Table.2 Multimodal
-                        evaluation of LMMs</figcaption>
+                <!-- Figures -->
+                <div class="img_siwon_slider">
+                    <div class="img_siwon_slides">
+                        <div class="img_siwon_slide">
+                            <img src="./static/img/fig/fig8.png" alt="Image 2">
+                            <p class="caption">Ablation of the novel view synthesis for static and transient fields on the NeRF On-the-go and Photo Tourism datasets.</p>
+                        </div>
+                        <div class="img_siwon_slide">
+                            <img src="./static/img/fig/fig7.png" alt="Image 1">
+                            <p class="caption">Ablation of the number of transient Gaussians and the multi-stage training scheme. (a) Evaluation of results across different numbers of transient Gaussians. (b) Comparision of training PSNR across with and without multi-stage training scheme.</p>
+                        </div>
+                        <div class="img_siwon_slide">
+                            <img src="./static/img/fig/fig9.png" alt="Image 3">
+                            <p class="caption">Ablation of the number of superpixels on the Patio-high scene. N denotes the number of superpixels.</p>
+                        </div>
+                        <div class="img_siwon_slide">
+                            <img src="./static/img/fig/fig10.png" alt="Image 3">
+                            <p class="caption">Ablation of the transient Mask. (a) Comparison of transient mask methods. (b) Effect of the superpixel-aware mask.</p>
+                        </div>
+                        <div class="img_siwon_slide">
+                            <img src="./static/img/fig/fig11.png" alt="Image 3">
+                            <p class="caption">Ablation of the uncertainty-aware densification (UAD). We visualize centroids of static Gaussians with and without UAD.</p>
+                        </div>
+                        <div class="img_siwon_slide">
+                            <img src="./static/img/fig/fig12.png" alt="Image 3">
+                            <p class="caption">Ablation study of the qualitative results for each component in ForestSplats. More details are provided in the supplements.</p>
+                        </div>
+                    </div>
+                    <button class="img_siwon_prev"><</button>
+                    <button class="img_siwon_next">></button>
                 </div>
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/Models_testResult_Text&Audio.jpg">
-                    <figcaption id="caption" style="margin-bottom: 10px; text-align: center">Table.3 Left: Text
-                        evaluaion of LLMs ; <br> Right: Audio evaluation of Audio
-                        LMMs</figcaption>
+                <!-- Tables -->
+                <div class="tab_siwon_slider">
+                    <div class="tab_siwon_slides">
+                        <div class="tab_siwon_slide">
+                            <img src="./static/img/fig/table3.png" alt="Image 1">
+                            <p class="caption">Ablation of computational efficiency. We report CPU Memory usage (MB) for initial the number of transient Gaussians.</p>
+                        </div>
+                        <div class="tab_siwon_slide">
+                            <img src="./static/img/fig/table4.png" alt="Image 2">
+                            <p class="caption">Ablation of the with and without Deformable for effect of transient fields on the Brandenburg gate and corner scenes.</p>
+                        </div>
+                        <div class="tab_siwon_slide">
+                            <img src="./static/img/fig/table5.png" alt="Image 3">
+                            <p class="caption">Ablation of the effectiveness of each component in ForestSplats. We report all quantitative results on the Sacre Coeur scene.</p>
+                        </div>
+                    </div>
+                    <button class="tab_siwon_prev"><</button>
+                    <button class="tab_siwon_next">></button>
                 </div>
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/Table3_diffModel-Abnormal.jpg">
-                    <figcaption id="caption" style="margin-bottom: 10px; text-align: center">Table.4 Results of
-                        different models on the LOKI for Abormal Details Selection and Abnormal
-                        explanation questions</figcaption>
-                </div>
-                <div class="my-slides">
-                    <img data-zoomable src="static/img/Table4&Table5.jpg">
-                    <figcaption id="caption" style="margin-bottom: 10px; text-align: center">Table.5 Left: Result
-                        decomposition across questions difficulty levels <br>
-                        Right: LMMs’ performances under different prompting strategies for judgement tasks
-                    </figcaption>
-                </div>
-
-                <a class="prev" onclick="plusSlides('slider-img-table', -1)">❮</a>
-                <a class="next" onclick="plusSlides('slider-img-table', 1)">❯</a>
-
-                <figcaption id="caption" style="margin-bottom: 10px; text-align: center"></figcaption>
-
-            </div>
         </div>
 
         <!-- Conclusion -->
@@ -1207,13 +820,11 @@
     <d-appendix>
         <h3>BibTeX</h3>
         <p class="bibtex">
-            @article{ye2024loki, <br>
-            &nbsp;&nbsp;title={LOKI: A Comprehensive Synthetic Data Detection Benchmark using Large Multimodal
-            Models},<br>
-            &nbsp;&nbsp;author={Ye, Junyan and Zhou, Baichuan and Huang, Zilong and Zhang, Junan and Bai, Tianyi and
-            Kang, Hengrui and He, Jun and Lin, Honglin and Wang, Zihao and Wu, Tong and others},<br>
-            &nbsp;&nbsp;journal={arXiv preprint arXiv:2410.09732},<br>
-            &nbsp;&nbsp;year={2024}<br>
+            @article{park, <br>
+            &nbsp;&nbsp;title={~},<br>
+            &nbsp;&nbsp;author={~},<br>
+            &nbsp;&nbsp;journal={arXiv preprint arXiv:},<br>
+            &nbsp;&nbsp;year={2025}<br>
             }
         </p>
 
@@ -1221,91 +832,10 @@
         <d-citation-list></d-citation-list>
     </d-appendix>
 
-    <!-- bibliography will be inlined during Distill pipeline's pre-rendering -->
     <d-bibliography src="bibliography.bib"></d-bibliography>
     <script src="./static/js/nav-bar.js"></script>
-    <!-- <script src="./static/css/jquery.event.move.js"></script> -->
-    <!-- <script src="./static/css/jquery.twentytwenty.js"></script> -->
 
-    <script>
-        const baseImage = document.getElementById("custom-base-image");
-        const overlayImage = document.getElementById("custom-overlay-image");
-        const slider = document.getElementById("custom-slider");
-        const overlay = document.getElementById("custom-overlay");
-        const thumbnails = document.querySelectorAll(".custom-thumbnail");
-
-        slider.addEventListener("mousedown", function (e) {
-            e.preventDefault();
-            document.addEventListener("mousemove", moveSlider);
-            document.addEventListener("mouseup", function () {
-                document.removeEventListener("mousemove", moveSlider);
-            });
-        });
-
-        function moveSlider(e) {
-            let rect = baseImage.getBoundingClientRect();
-            let offsetX = e.clientX - rect.left;
-            let percentage = Math.max(0, Math.min(offsetX / rect.width, 1));
-            overlay.style.clipPath = `inset(0 ${100 - percentage * 100}% 0 0)`;
-            slider.style.left = `${percentage * 100}%`;
-        }
-
-        function changeImages(baseSrc, overlaySrc) {
-            baseImage.src = baseSrc;
-            overlayImage.src = overlaySrc;
-
-            thumbnails.forEach(img => img.classList.remove("active"));
-            document.querySelector(`[src="${baseSrc}"]`).classList.add("active");
-        }
-    </script>
-
-
-    <script type="text/javascript">
-        // changeContent('Place1');
-        // switchVideo('RX399', 'video1Container', 'video1Preview');
-        // switchVideo('UrbanPlanner', 'video1Container', 'video1Preview');
-        switchVideo('Tourist', 'video1Container', 'video1Preview', 'video-scenery');
-        // initPlayer(0);
-        let slideIndex = 1;
-        // slider image
-        showSlides("slider-img-3D", slideIndex);
-        showSlides("slider-img-image-animals", slideIndex);
-        showSlides("slider-img-image-person", slideIndex);
-        showSlides("slider-img-image-scenery", slideIndex);
-        showSlides("slider-img-image-object", slideIndex);
-        showSlides("slider-img-image-document", slideIndex);
-        showSlides("slider-img-image-medical", slideIndex);
-        showSlides("slider-img-image-satellite", slideIndex);
-        // slider text
-        showSlides("slider-text-ancient-literature", slideIndex);
-        showSlides("slider-text-speech", slideIndex);
-        showSlides("slider-text-modern-literature", slideIndex);
-        showSlides("slider-text-wiki", slideIndex);
-        showSlides("slider-text-philosophy", slideIndex);
-        showSlides("slider-text-paper", slideIndex);
-        showSlides("slider-text-news", slideIndex);
-        showSlides("slider-text-essay", slideIndex);
-        // slider table
-        showSlides("slider-img-table", slideIndex);
-        // auto play slider
-        setInterval(function () {
-            plusSlides('slider-img-3D', 1);
-        }, 10000); // 10000毫秒 = 10秒
-    </script>
-
-    <div class="container-fluid">
-        <div class="center-text">
-            <script type='text/javascript' id='clustrmaps'
-                src='//cdn.clustrmaps.com/map_v2.js?cl=050404&w=300&t=tt&d=G1Z8LlfDzVSJNsCCsFKtN_qV96kTLuOgPt_IeJDdBRE&co=ffffff&ct=000000'></script>
-        </div>
-    </div>
+    <p align="center">This website is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> and is based on the <a href="https://opendatalab.github.io/LOKI/">LOKI</a> website.</p>
 </body>
 
 </html>
-
-<!-- <video class="auto-video" muted autoplay preload="auto" loop="loop" playsinline>
-                        <source src="static/video/image_labelu_animation.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video> -->
-
-<!-- 第四部分： 3D -->
