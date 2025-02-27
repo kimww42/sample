@@ -78,11 +78,12 @@
 
     <!-- finding card -->
     <link rel="stylesheet" href="./static/css/finding-card.css">
-    <!-- <link href="./static/css/twentytwenty.css" rel="stylesheet" type="text/css" /> -->
+    <link href="./static/css/twentytwenty.css" rel="stylesheet" type="text/css" />
 
     <!-- author-affiliations -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="./static/js/author-affiliations.js"></script>
+
     <style>
         .gallery-container {
             position: relative;
@@ -400,10 +401,9 @@
                 <div class="wrapper">
                     <h1>ForestSplats</h1>
                 </div>
-                <h1 style="margin-top: 0px; color: #375233;">ForestSplats: Deformable transient field for Gaussian
-                    Splatting in the Wild</h1>
-                <p style="color: #FFF7D4">
-                    <em><strong style="color: #ffe099">Authors:</strong></em>
+                <h1 style="margin-top: 0px; color: #35bb49;">ForestSplats: Deformable transient field for Gaussian Splatting in the Wild</h1>
+                <p style="color: #4a4a4a">
+                    <em><strong style="color: #4a4a4a">Authors:</strong></em>
                     <a href="https://kalelpark.github.io/" class="author-link SYSU-author AILAB-author"
                         target="_blank">Wongi Park<sup>1</sup></a>,
                     <a href="https://baichuanzhou.github.io/" class="author-link AILAB-author" target="_blank">
@@ -415,12 +415,12 @@
                     <a href="https://liweijia.github.io/" class="author-link SYSU-author" target="_blank"> Soomok Lee
                         <sup>2†</sup></a>
                 </p>
-                <p style="color: #FFF7D4">
-                    <em><strong style="color: #ffe099">Affiliations:</strong></em>
+                <p style="color: #4a4a4a">
+                    <em><strong style="color: #4a4a4a">Affiliations:</strong></em>
                     <span id="Ajou" class="author-link SYSU-author AILAB-author" data-affiliation="Ajou">Department of <sup>1</sup>Software 
                         and <sup>2</sup>Artificial Intelligence, Ajou university and <sup>3</sup>Minds and Company</span>
                 </p>
-                <p style="color: #ffffff">
+                <p style="color: #4a4a4a">
                     † Corresponding Authors
                 </p>
                 <div class="button-container">
@@ -483,6 +483,14 @@
                 </a>
             </div>
             <hr style="display: block; margin: auto;">
+            <div class="interaction-color">
+                <a class="nav-link" href="#interaction">
+                    <img class="loki-tag" src="static/img/tags/interaction.png">
+                </a>
+                <a class="nav-link" href="#interaction"><img src="static/img/icons/interaction.png">
+                </a>
+            </div>
+            <hr style="display: block; margin: auto;">
             <!-- evaluation -->
             <div id="nav-bar-evaluation">
                 <a class="nav-link" href="#evaluation">
@@ -500,6 +508,8 @@
                 </a>
                 <a class="nav-link" href="#conclusion"><img src="static/img/icons/conclusion.png"
                         title="LOKI conclusion"></a>
+            </div>
+            <div id="nav-bar-conclusion">
             </div>
         </div>
 
@@ -661,6 +671,22 @@
             <br><br><br>
         </div>
 
+        <div id="interaction">
+            <h2 class="text"><img src="static/img/icons/interaction.png" width="50px"> Interaction</h2>
+            <div class="l-screen grey-overlay"></div>
+            <p class="text">
+                We provide qualitative results on the Photo Tourism and NeRF On-the-Go datasets. Our method addresses
+                occluders in the scene using superpixel-aware masking and a multi-stage training strategy.
+            </p>
+                <div class="twentytwenty-container twentytwenty-custom">
+                  <img src="./static/img/qualitative/Outdoor1/Outdoor_gt.png" alt="GT">
+                  <img src="./static/img/qualitative/Outdoor1/Outdoor_3dgs.png" alt="3DGS">
+                  <img src="./static/img/qualitative/Outdoor1/Outdoor_thermal3dgs.png" alt="Thermal3D-GS">
+                  <img src="./static/img/qualitative/Outdoor1/Outdoor_VetaGS.png" alt="Veta-GS(Ours)">
+                </div>
+            <br><br><br>
+        </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const slidesContainer = document.querySelector('.img_siwon_slides');
@@ -739,9 +765,7 @@
 
         <!-- Evaluation -->
         <div id="evaluation" style="position: relative; margin-top: 20px; margin-bottom: 40px;">
-            <h2 class="text" style="margin-top:0px; margin-bottom:10px"><img src="static/img/icons/evaluation.png"
-                    width="50px">
-                Evaluation</h2>
+            <h2 class="text" style="margin-top:0px; margin-bottom:10px"><img src="static/img/icons/evaluation.png" width="50px"> Evaluation</h2>
                 <!-- Figures -->
                 <div class="img_siwon_slider">
                     <div class="img_siwon_slides">
@@ -832,11 +856,20 @@
         <d-footnote-list></d-footnote-list>
         <d-citation-list></d-citation-list>
     </d-appendix>
+    <p align="center">This website is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> and is based on the <a href="https://opendatalab.github.io/LOKI/">LOKI</a> website.</p>
 
+    
     <d-bibliography src="bibliography.bib"></d-bibliography>
     <script src="./static/js/nav-bar.js"></script>
+    <script src="./static/css/jquery.event.move.js"></script>
+    <script src="./static/css/jquery.twentytwenty.js"></script>
 
-    <p align="center">This website is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> and is based on the <a href="https://opendatalab.github.io/LOKI/">LOKI</a> website.</p>
+    <script>
+        $(window).on('load', function () { 
+        $(".twentytwenty-container").twentytwenty({ default_offset_pct: 0.5 }); 
+        });
+    </script>
+    
 </body>
 
 </html>
