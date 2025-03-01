@@ -1,8 +1,17 @@
 /* ----------- */
 /*  container  */
 /* ----------- */
+.twenty-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2개의 컬럼 */
+    gap: 20px; /* 아이템 간 간격 */
+    margin: 0 auto;
+    max-width: 100%; /* 필요에 따라 조정 */
+    margin-left: -140px;
+  }
+
+  
 .twentytwenty-container {
-    overflow: hidden;
     position: relative;
     margin: 5px auto;
     border: 2px solid white;
@@ -14,8 +23,8 @@
     top: 0;
     left: 0;
     display: block;
-    max-width: auto;
-    height: auto;
+    max-width: 600px;
+    height: 400px;
 }
 .twentytwenty-container * {
     -webkit-box-sizing: content-box;

@@ -1874,3 +1874,271 @@ div.takeaway-tags img {
 } */
 
 
+
+
+.gallery-container {
+  position: relative;
+  width: 150%;
+  /* Expand to full width */
+  margin: auto;
+  left: 55%;
+  transform: translateX(-50%);
+}
+
+.gallery {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  padding: 0px;
+  background-color: #FCF6E6;
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.gallery::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+.gallery-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 수직 중앙 정렬 */
+  text-align: center;
+  margin: 0 -10px;
+  /* 텍스트도 중앙 정렬 */
+}
+
+.gallery-items video {
+  width: 100%;
+  /* 부모 요소에 맞게 조정 */
+  max-width: 500px;
+  /* 원하는 크기로 조정 */
+}
+
+
+.gallery-item {
+  flex: 0 0 calc(25% - 20px);
+  /* Four items per row */
+  margin: 0 5px;
+  text-align: center;
+}
+
+.gallery-item video {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.gallery-item p {
+  margin-top: -6px;
+  font-size: 15px;
+}
+
+.gallery-items p {
+  font-size: 15px;
+}
+
+.arrow {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.arrow-left {
+  left: 10px;
+  /* Adjust as needed */
+}
+
+.arrow-right {
+  right: 10px;
+  /* Adjust as needed */
+}
+
+.pagination-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.pagination-dots span {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.pagination-dots .active {
+  background-color: #717171;
+}
+
+.custom-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.custom-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.custom-image-comparison {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.custom-base-image,
+.custom-overlay-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.custom-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  clip-path: inset(0 50% 0 0);
+}
+
+.custom-slider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: red;
+  cursor: ew-resize;
+  transform: translateX(-50%);
+}
+
+.custom-thumbnail-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.custom-thumbnail {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.custom-thumbnail.active {
+  border: 2px solid red;
+}
+
+.img_siwon_slider {
+position: relative;
+overflow: hidden;
+width: 150%;
+margin: 20px auto; /* 중앙 정렬 */
+margin-left: -140px;
+}
+
+.img_siwon_slides {
+display: flex;
+transition: transform 0.5s ease-in-out;
+}
+
+.img_siwon_slide {
+width: 100%;
+flex-shrink: 0;
+text-align: center; /* 캡션 중앙 정렬 */
+}
+
+.img_siwon_slide img {
+width: 100%;
+display: block;
+}
+
+.caption {
+margin-top: 10px;
+font-size: 16px;
+color: #333;
+}
+
+.img_siwon_prev, .img_siwon_next {
+position: absolute;
+top: 45%;
+transform: translateY(-50%);
+background: rgba(220, 220, 220, 0.8);
+color: #3a3a3a;
+border: none;
+padding: 8px;
+cursor: pointer;
+font-size: 20px;
+}
+
+.img_siwon_prev {
+left: 10px;
+}
+
+.img_siwon_next {
+right: 10px;
+}
+
+.tab_siwon_slider {
+position: relative;
+overflow: hidden;
+width: 150%;
+margin: 20px auto; /* 중앙 정렬 */
+margin-left: -140px;
+}
+
+.tab_siwon_slides {
+display: flex;
+transition: transform 0.5s ease-in-out;
+}
+
+.tab_siwon_slide {
+width: 100%;
+flex-shrink: 0;
+text-align: center; /* 캡션 중앙 정렬 */
+}
+
+.tab_siwon_slide img {
+width: 100%;
+display: block;
+}
+
+.tab_siwon_prev, .tab_siwon_next {
+position: absolute;
+top: 45%;
+transform: translateY(-50%);
+background: rgba(220, 220, 220, 0.8);
+color: #3a3a3a;
+border: none;
+padding: 8px;
+cursor: pointer;
+font-size: 20px;
+}
+
+.tab_siwon_prev {
+left: 10px;
+}
+
+.tab_siwon_next {
+right: 10px;
+}
